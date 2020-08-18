@@ -9,6 +9,12 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import Drawer from "@material-ui/core/Drawer";
 import Container from '@material-ui/core/Container';
 import 'materialize-css'
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
+import List from "@material-ui/core/List";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const tutorialSteps = [
     {
@@ -91,10 +97,15 @@ export default function TextMobileStepper() {
     };
 
     return (
-        <div style={{textDecoration: 'none', color: 'white'}}>
-            <React.Fragment key={'right'}>
-                <Button onClick={toggleDrawer('right', true)}>{'Get tutorial'}</Button>
-            </React.Fragment>
+        <div>
+            <ListItem
+                button
+                onClick={toggleDrawer('right', true)}
+            >
+                <ListItemIcon>{3 % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
+                <ListItemText primary='Get tutorial'/>
+            </ListItem>
+
             <Drawer anchor={'right'} open={state['right']} onClose={toggleDrawer(false)}>
                 <div className={classes.root}>
                     <Paper square elevation={0} className={classes.header}>

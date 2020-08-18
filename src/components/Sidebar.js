@@ -79,15 +79,13 @@ Nullam eget est sed sem iaculis gravida eget vitae justo.
                 {['All mail', 'Trash', 'Spam'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <HelpInfo text={longText}/>
                         <ListItemText primary={text}/>
+                        <HelpInfo text={longText}/>
                     </ListItem>
                 ))}
 
-                <ListItem button key={'Tutorial'}>
-                    <ListItemIcon>{3 % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
+
                     <Tutorial/>
-                </ListItem>
 
                 <ListItem button onClick={handleClick}>
                     <ListItemIcon>

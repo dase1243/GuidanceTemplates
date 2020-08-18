@@ -4,6 +4,8 @@ import InfoIcon from "@material-ui/icons/Info";
 
 
 export default function HelpInfo(props) {
+    if (props.text === '') return null
+
     return (
         <div>
             <Tooltip title={props.text}>
