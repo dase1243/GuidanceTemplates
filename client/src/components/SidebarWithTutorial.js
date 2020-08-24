@@ -93,7 +93,6 @@ const users = [
                             "Tutorial 4, Step 3 Description",
                         ]
                     }]
-
             },
             "/home_check1": {
                 "firstTimeVisit": false,
@@ -543,7 +542,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function SidebarWithTutorial() {
+export default function SidebarWithTutorial(props) {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -556,7 +555,15 @@ export default function SidebarWithTutorial() {
         setOpen(false);
     };
 
+    // const tutorials = users[0]['pages']['/']['tutorials']
+
+    // let serializedMap = JSON.stringify(props.user);
+    console.log(JSON.parse(JSON.stringify(props.user)))
+    // console.log(props.user)
+
+    // const tutorials = props.user == null ? [] : props.user.pages['/'].tutorials
     const tutorials = users[0]['pages']['/']['tutorials']
+    // const tutorials = null
 
     return (
         <div>

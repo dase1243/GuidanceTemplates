@@ -43,7 +43,8 @@ export default function TutorialStepper(props) {
     const tutorial = props.tutorial
     const classes = useStyles();
     const theme = useTheme();
-    const [activeStep, setActiveStep] = React.useState(0);
+    console.log("props.tutorial: ", props.tutorial)
+    const [activeStep, setActiveStep] = React.useState(props.tutorial.currentStep);
     // const tutorial = props.tutorial
     const maxSteps = tutorial.numberOfSteps
 

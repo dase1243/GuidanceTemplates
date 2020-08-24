@@ -6,20 +6,22 @@ const tut = new Schema({
 })
 
 const user = new Schema({
-    username: {
-        required: true,
-        type: String
-    },
-    pages: {
-        type: Mixed
-        // type: Map,
-        // of: {
-        //     type: Map,
-        //     of: {
-        //         tut
-        //     }
-        // },
+        username: {
+            required: true,
+            type: String
+        },
+        pages: [{
+            path: String,
+            firstTimeVisit: Boolean,
+            tutorials: {
+                label: String,
+                currentStep: Number,
+                numberOfSteps: Number,
+                labels: Array,
+                descriptions: Array
+            }
+        }]
     }
-})
+)
 
 module.exports = model('User', user)
