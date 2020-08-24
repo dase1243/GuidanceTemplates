@@ -70,11 +70,7 @@ class App extends Component {
 
     render() {
         return (
-            <Container
-                className={{
-                    maxWidth: 400,
-                    flexGrow: 1,
-                }}>
+            <Container>
                 <Dialog
                     open={this.state.dialogFirstGuideOpenStatus}
                     keepMounted

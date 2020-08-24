@@ -558,7 +558,7 @@ export default function SidebarWithTutorial(props) {
     // const tutorials = users[0]['pages']['/']['tutorials']
 
     // let serializedMap = JSON.stringify(props.user);
-    console.log(JSON.parse(JSON.stringify(props.user)))
+    // console.log(JSON.parse(JSON.stringify(props.user)))
     // console.log(props.user)
 
     // const tutorials = props.user == null ? [] : props.user.pages['/'].tutorials

@@ -90,6 +90,9 @@ class TestComponent extends Component {
             firstGuideActiveStep: 0,
             userDataFromServer: null
         }
+
+        this.guideStateIndexNextHandler = this.guideStateIndexNextHandler.bind(this)
+        this.guideStateIndexPrevHandler = this.guideStateIndexPrevHandler.bind(this)
     }
 
     guideStateIndexNextHandler() {
@@ -151,15 +154,15 @@ class TestComponent extends Component {
 
                 <Container width='auto'>
                     <List>
-                        {/*<ListItem button key={'Pop-up guide'} onClick={() => {*/}
-                        {/*    this.setState({*/}
-                        {/*        visible: !this.state.visible*/}
-                        {/*    })*/}
-                        {/*}}>*/}
-                        {/*    <ListItemIcon>{0 % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>*/}
-                        {/*    <ListItemText primary={'Pop-up guide'}/>*/}
-                        {/*    <HelpInfo text="Single pop-up guide"/>*/}
-                        {/*</ListItem>*/}
+                        <ListItem button key={'Pop-up guide'} onClick={() => {
+                            this.setState({
+                                visible: !this.state.visible
+                            })
+                        }}>
+                            <ListItemIcon>{0 % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
+                            <ListItemText primary={'Pop-up guide'}/>
+                            <HelpInfo text="Single pop-up guide"/>
+                        </ListItem>
                         <Sidebar/>
                         <SidebarWithTutorial user={this.state.userDataFromServer}/>
                         <ListItem button onClick={() => this.setState({usernameInputDialogOpenStatus: true})}>
