@@ -93,9 +93,7 @@ export default function PopUpGuide(props) {
     const [placement, setPlacement] = React.useState();
     const classes = useStyles();
 
-    const handleClick = (newPlacement, index) => (event) => {
-        setActiveStep(index)
-
+    const handleClick = (newPlacement) => (event) => {
         setAnchorEl(event.currentTarget);
         setOpen((prev) => placement !== newPlacement || !prev);
         setPlacement(newPlacement);
@@ -206,28 +204,28 @@ export default function PopUpGuide(props) {
                     </Box>
                     <Box component="div" display="inline">
                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                            <Button id='btn.attach' onClick={handleClick('bottom', 0)}
+                            <Button id='btn.attach' onClick={handleClick('bottom')}
                                     className={classes.button}
                                     startIcon={<AttachFileIcon/>}>Attach</Button>
                         </ButtonGroup>
                     </Box>
                     <Box component="div" display="inline">
                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                            <Button id='btn.upload' onClick={handleClick('bottom', 1)}
+                            <Button id='btn.upload' onClick={handleClick('bottom')}
                                     className={classes.button}
                                     startIcon={<BackupIcon/>}>Upload</Button>
                         </ButtonGroup>
                     </Box>
                     <Box component="div" display="inline">
                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                            <Button id='btn.refresh' onClick={handleClick('bottom', 2)}
+                            <Button id='btn.refresh' onClick={handleClick('bottom')}
                                     className={classes.button}
                                     startIcon={<CachedIcon/>}>Refresh</Button>
                         </ButtonGroup>
                     </Box>
                     <Box component="div" display="inline">
                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                            <Button id='btn.apply' onClick={handleClick('bottom', 3)}
+                            <Button id='btn.apply' onClick={handleClick('bottom')}
                                     className={classes.button}
                                     startIcon={<BookmarkIcon/>}>Apply</Button>
                         </ButtonGroup>
