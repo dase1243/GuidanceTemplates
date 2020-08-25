@@ -18,13 +18,13 @@ const tutorialSteps = [
         label: 'Welcome to our Guidance system. Please click Next',
     },
     {
-        label: 'We will help you to know the main features of what we supply',
+        label: 'We will help you to learn main features of the system',
     },
     {
         label: 'Show which possible variants of guidance exist',
     },
     {
-        label: 'This is the first variant',
+        label: 'This was the first variant',
     },
 ];
 
