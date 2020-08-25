@@ -13,7 +13,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import List from "@material-ui/core/List";
 import ListItemText from "@material-ui/core/ListItemText";
 
 const tutorialSteps = [

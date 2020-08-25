@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import {makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -12,11 +11,9 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
 import Collapse from '@material-ui/core/Collapse';
 import Tutorial from "./Tutorial";
 import HelpInfo from "./HelpInfo";
-
 
 import AssessmentIcon from '@material-ui/icons/Assessment'
 import AssignmentIcon from '@material-ui/icons/Assignment'
@@ -25,7 +22,6 @@ import AttachFileIcon from '@material-ui/icons/AttachFile'
 import Brightness4Icon from '@material-ui/icons/Brightness4'
 import BuildIcon from '@material-ui/icons/Build'
 import CloudOffIcon from '@material-ui/icons/CloudOff'
-import BookmarksIcon from '@material-ui/icons/Bookmarks'
 import PowerOffIcon from '@material-ui/icons/PowerOff';
 
 const useStyles = makeStyles((theme) => ({
@@ -64,12 +60,6 @@ export default function Sidebar() {
 
         setState({...state, [anchor]: open});
     };
-
-    const longText = `
-Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
-Praesent non nunc mollis, fermentum neque at, semper arcu.
-Nullam eget est sed sem iaculis gravida eget vitae justo.
-`;
 
     const list = (
         <div

@@ -796,8 +796,6 @@ export default function SidebarWithTutorial(props) {
 
     if(index !== -1)
         tutorials = users[index]['pages']['/']['tutorials']
-    console.log(tutorials)
-    // const tutorials = null
 
     return (
         <div>

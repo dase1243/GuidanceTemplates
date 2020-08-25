@@ -11,7 +11,6 @@ import MobileStepper from "@material-ui/core/MobileStepper";
 import Button from "@material-ui/core/Button";
 import {KeyboardArrowLeft, KeyboardArrowRight} from "@material-ui/icons";
 import DialogActions from "@material-ui/core/DialogActions";
-import ListItem from "@material-ui/core/ListItem";
 
 const tutorialSteps = [
     {

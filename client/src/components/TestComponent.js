@@ -15,6 +15,7 @@ import Box from "@material-ui/core/Box";
 import HelpInfo from "./HelpInfo";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import PopUpGuide from "./PopUpGuide";
 
 
 function HelpCard(props) {
@@ -88,12 +89,28 @@ class TestComponent extends Component {
             username: '',
             usernameInputDialogOpenStatus: false,
             firstGuideActiveStep: 0,
-            userDataFromServer: null
+            userDataFromServer: null,
+            // popupGuideStepIndex: 0
         }
 
         this.guideStateIndexNextHandler = this.guideStateIndexNextHandler.bind(this)
         this.guideStateIndexPrevHandler = this.guideStateIndexPrevHandler.bind(this)
+
+        // this.popupGuideHandleNext = this.popupGuideHandleNext.bind(this)
+        // this.popupGuideHandleBack = this.popupGuideHandleBack.bind(this)
     }
+
+    // popupGuideHandleNext() {
+    //     document.getElementById("btn.refresh").click()
+    //     document.getElementById("btn.refresh").click()
+    //     this.setState({
+    //         popupGuideStepIndex: (this.state.popupGuideStepIndex + 1) % 4
+    //     })
+    // };
+    //
+    // popupGuideHandleBack() {
+    //     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    // };
 
     guideStateIndexNextHandler() {
         const tmp = this.state.guideStateIndex + 1
@@ -152,7 +169,7 @@ class TestComponent extends Component {
                     }}
                 />
 
-                <Container width='auto'>
+                <Container>
                     <List>
                         <ListItem button key={'Pop-up guide'} onClick={() => {
                             this.setState({
@@ -173,15 +190,16 @@ class TestComponent extends Component {
                             <ListItemIcon><PersonIcon/></ListItemIcon>
                             <ListItemText primary={`Current username: ${this.state.username}`}/>
                         </ListItem>
+                        <PopUpGuide visible={this.state.visible}/>
                     </List>
                 </Container>
 
-                <ExampleBoxes
-                    visible={this.state.visible}
-                    guideStateIndex={this.state.guideStateIndex}
-                    nextHandler={this.guideStateIndexNextHandler}
-                    prevHandler={this.guideStateIndexPrevHandler}
-                />
+                {/*<ExampleBoxes*/}
+                {/*    visible={this.state.visible}*/}
+                {/*    guideStateIndex={this.state.guideStateIndex}*/}
+                {/*    nextHandler={this.guideStateIndexNextHandler}*/}
+                {/*    prevHandler={this.guideStateIndexPrevHandler}*/}
+                {/*/>*/}
             </Container>
         )
     }
