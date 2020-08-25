@@ -164,7 +164,7 @@ class TestComponent extends Component {
                             <HelpInfo text="Single pop-up guide"/>
                         </ListItem>
                         <Sidebar/>
-                        <SidebarWithTutorial user={this.state.userDataFromServer}/>
+                        <SidebarWithTutorial user={this.state.username}/>
                         <ListItem button onClick={() => this.setState({usernameInputDialogOpenStatus: true})}>
                             <ListItemIcon><PersonIcon/></ListItemIcon>
                             <ListItemText primary={'Input username to track'}/>

@@ -17,9 +17,20 @@ import Collapse from '@material-ui/core/Collapse';
 import Tutorial from "./Tutorial";
 import HelpInfo from "./HelpInfo";
 
+
+import AssessmentIcon from '@material-ui/icons/Assessment'
+import AssignmentIcon from '@material-ui/icons/Assignment'
+import AutorenewIcon from '@material-ui/icons/Autorenew'
+import AttachFileIcon from '@material-ui/icons/AttachFile'
+import Brightness4Icon from '@material-ui/icons/Brightness4'
+import BuildIcon from '@material-ui/icons/Build'
+import CloudOffIcon from '@material-ui/icons/CloudOff'
+import BookmarksIcon from '@material-ui/icons/Bookmarks'
+import PowerOffIcon from '@material-ui/icons/PowerOff';
+
 const useStyles = makeStyles((theme) => ({
     list: {
-        width: 250,
+        width: 400,
     },
     fullList: {
         width: 'auto',
@@ -67,30 +78,37 @@ Nullam eget est sed sem iaculis gravida eget vitae justo.
             onKeyDown={toggleDrawer('right', false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
-                    </ListItem>
-                ))}
+                <ListItem button key={"Upload new data"}>
+                    <ListItemIcon><AssessmentIcon/></ListItemIcon>
+                    <ListItemText primary={"Upload new data"}/>
+                </ListItem>
+                <ListItem button key={"Prepare datasets for a new training"}>
+                    <ListItemIcon><AssignmentIcon/></ListItemIcon>
+                    <ListItemText primary={"Prepare datasets for a new training"}/>
+                </ListItem>
+                <ListItem button key={"Refresh model statistics and reset cache"}>
+                    <ListItemIcon><AutorenewIcon/></ListItemIcon>
+                    <ListItemText primary={"Refresh model statistics and reset cache"}/>
+                </ListItem>
             </List>
             <Divider/>
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
-                        <HelpInfo text={longText}/>
-                    </ListItem>
-                ))}
+                <ListItem button key={"Upload new datasets"}>
+                    <ListItemIcon><AttachFileIcon/></ListItemIcon>
+                    <ListItemText primary={"Upload new datasets"}/>
+                </ListItem>
+                <ListItem button key={"Change to night mode"}>
+                    <ListItemIcon><Brightness4Icon/></ListItemIcon>
+                    <ListItemText primary={"Change to night mode"}/>
+                </ListItem>
 
-                    <Tutorial/>
+                <Tutorial/>
 
                 <ListItem button onClick={handleClick}>
                     <ListItemIcon>
-                        <InboxIcon/>
+                        <BuildIcon/>
                     </ListItemIcon>
-                    <ListItemText primary="Inbox"/>
+                    <ListItemText primary="Report a problem"/>
                     {open ? <ExpandLess/> : <ExpandMore/>}
                 </ListItem>
 
@@ -98,10 +116,17 @@ Nullam eget est sed sem iaculis gravida eget vitae justo.
                     <List component="div" disablePadding>
                         <ListItem button className={classes.nested}>
                             <ListItemIcon>
-                                <StarBorder/>
+                                <CloudOffIcon/>
                             </ListItemIcon>
-                            <ListItemText primary="Starred"/>
-                            <HelpInfo text={longText}/>
+                            <ListItemText primary="Dataset is not uploading"/>
+                            <HelpInfo text={"When you are trying to upload a dataset, it's not visible on the page"}/>
+                        </ListItem>
+                        <ListItem button className={classes.nested}>
+                            <ListItemIcon>
+                                <PowerOffIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Server disconnect"/>
+                            <HelpInfo text={"When trying to get a data from the server, connection failure happens"}/>
                         </ListItem>
                     </List>
                 </Collapse>
