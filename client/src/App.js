@@ -15,16 +15,16 @@ import ListItem from "@material-ui/core/ListItem";
 
 const tutorialSteps = [
     {
-        label: 'This is the first guide for this page',
+        label: 'Welcome to our Guidance system. Please click Next',
     },
     {
-        label: 'This is the second guide for this page',
+        label: 'We will help you to know the main features of what we supply',
     },
     {
-        label: 'This is the third guide for this page',
+        label: 'Show which possible variants of guidance exist',
     },
     {
-        label: 'This is the forth guide for this page',
+        label: 'This is the first variant',
     },
 ];
 
